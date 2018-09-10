@@ -357,11 +357,10 @@ int main(int argc, char * argv[]) {
 			"\t-frm the format of the output: 1 (chrName:start-end) or 2 (chrName\tstart\tend).\n");
 	message.append(
 			"\t\tThe output format are zero based and the end is exclusive.\n");
-
-	message.append("\t-hmo file where the HMM is saved, optional.\n\n");
-	message.append("\t-cor integer of the number of threads, optional.\n\n");
-	message.append("\t\tThe more threads, the higher the memory requirement.");
-	message.append("\t\tThe defaul is the number of cores - 1, or 1 if single core is found.");
+	message.append("\t-hmo file where the HMM is saved, optional.\n");
+	message.append("\t-cor integer of the number of threads, optional.\n");
+	message.append("\t\tThe more threads, the higher the memory requirement.\n");
+	message.append("\t\tThe defaul is the number of cores - 1, or 1 if single core is found.\n\n");
 
 	message.append("Examples:\n");
 	message.append(
