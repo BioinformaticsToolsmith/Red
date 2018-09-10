@@ -4,13 +4,13 @@ Red: an intelligent, rapid, accurate tool for detecting repeats de-novo on the g
 Compiling the source code
 
 The following command makes the required directories: 
-	> make bin
+> make bin
 
 The following command makes the binary that is located under the ``bin'' directory:
-	> make 
+> make 
 
 To find the binary:
-	> cd ../bin
+> cd ../bin
 
 Please cite the following paper:
 
