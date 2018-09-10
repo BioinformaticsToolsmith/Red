@@ -1,6 +1,8 @@
 # Red
 Red: an intelligent, rapid, accurate tool for detecting repeats de-novo on the genomic scale. 
 
+Requirement: GNU gcc8.2 or higher. Please change the name (CXX) of the compiler in the Makefile. 
+  
 Compiling the source code
 
 The following command makes the required directories: 
