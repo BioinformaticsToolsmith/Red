@@ -54,6 +54,7 @@ private:
 public:
 	static const int FRMT_POS = 1;
 	static const int FRMT_BED = 2;
+	static const int FRMT_ONE = 3;   
 
 	Scanner(HMM *, int, ChromosomeOneDigit *, string);
 	Scanner(HMM *, int, ChromosomeOneDigit *, ITableView<unsigned long, int> *);

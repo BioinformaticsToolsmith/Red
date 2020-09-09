@@ -299,13 +299,15 @@ void Scanner::printScores(string outputFile, bool canAppend) {
 
 void Scanner::printIndex(string outputFile, bool canAppend, int frmt) {
 
-	if(frmt != FRMT_POS && frmt != FRMT_BED){
+	if(frmt != FRMT_POS && frmt != FRMT_BED && frmt != FRMT_ONE){
 		string msg("Unknown output format: ");
 		msg.append(Util::int2string(frmt));
 		msg.append(". The known formats are: ");
 		msg.append(Util::int2string(FRMT_POS));
 		msg.append(" and ");
 		msg.append(Util::int2string(FRMT_BED));
+		msg.append(" and ");
+		msg.append(Util::int2string(FRMT_ONE));
 		msg.append(".");
 		throw InvalidInputException(msg);
 	}
@@ -331,6 +333,13 @@ void Scanner::printIndex(string outputFile, bool canAppend, int frmt) {
 		for (unsigned int j = 0; j < regionList->size(); j++) {
 			outIndex << header.substr(1) << "\t";
 			outIndex << ((int) (regionList->at(j)->getStart())) << "\t";
+			outIndex << ((int) (regionList->at(j)->getEnd() + 1));
+			outIndex << endl;
+		}
+	} else if(frmt == FRMT_ONE){
+		for (unsigned int j = 0; j < regionList->size(); j++) {
+			outIndex << header.substr(1) << "\t";
+			outIndex << ((int) (regionList->at(j)->getStart() +1)) << "\t";
 			outIndex << ((int) (regionList->at(j)->getEnd() + 1));
 			outIndex << endl;
 		}
