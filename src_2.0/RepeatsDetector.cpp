@@ -230,6 +230,8 @@ void drive(map<string, string> * const param) {
 					string ext(".rpt");
 					if (atoi(param->at(FRM_PRM).c_str()) == 2) {
 						ext = string(".bed");
+					} else if (atoi(param->at(FRM_PRM).c_str()) == 3) {
+                  ext = string(".tsv")
 					}
 					string rptFile = param->at(RPT_PRM) + Util::fileSeparator
 							+ nickName + ext;
@@ -354,9 +356,11 @@ int main(int argc, char * argv[]) {
 	message.append("\t\tMasked sequences files have the \".msk\" extension.\n");
 
 	message.append(
-			"\t-frm the format of the output: 1 (chrName:start-end) or 2 (chrName\tstart\tend).\n");
+			"\t-frm the format of the output: 1 (chrName:start-end), 2 (chrName\tstart\tend) or 3 (chrName\tstart\tend).\n");
 	message.append(
-			"\t\tThe output format are zero based and the end is exclusive.\n");
+			"\t\tOutput formats 1 & 2 are zero-based, end exclusive.\n");
+	message.append(
+         "\t\tOutput format 3 is one-based, end inclusive (Ensembl).\n");
 	message.append("\t-hmo file where the HMM is saved, optional.\n");
 	message.append("\t-cor integer of the number of threads, optional.\n");
 	message.append("\t\tThe more threads, the higher the memory requirement.\n");
@@ -487,10 +491,12 @@ int main(int argc, char * argv[]) {
 							Util::int2string(Scanner::FRMT_POS)));
 		} else {
 			if (atoi(param->at(FRM_PRM).c_str()) != Scanner::FRMT_POS
-					&& atoi(param->at(FRM_PRM).c_str()) != Scanner::FRMT_BED) {
+					&& atoi(param->at(FRM_PRM).c_str()) != Scanner::FRMT_BED
+					&& atoi(param->at(FRM_PRM).c_str()) != Scanner::FRMT_ONE) {
 				cerr << "The output format must be " << Scanner::FRMT_POS
 						<< " or ";
-				cerr << Scanner::FRMT_BED << ". The format received is ";
+				cerr << Scanner::FRMT_BED << " or ";
+				cerr << Scanner::FRMT_ONE << ". The format received is ";
 				cerr << param->at(FRM_PRM) << "." << endl;
 				return 1;
 			}
