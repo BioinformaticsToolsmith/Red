@@ -356,7 +356,9 @@ int main(int argc, char * argv[]) {
 	message.append("\t\tMasked sequences files have the \".msk\" extension.\n");
 
 	message.append(
-			"\t-frm the format of the output: 1 (chrName:start-end), 2 (chrName\tstart\tend) or 3 (chrName\tstart\tend).\n");
+			"\t-frm the format of the output: 1 (chrName:start-end), \n");
+	message.append(
+         "\t     2 (chrName\tstart\tend) or 3 (chrName\tstart\tend).\n");
 	message.append(
 			"\t\tOutput formats 1 & 2 are zero-based, end exclusive.\n");
 	message.append(
