@@ -337,13 +337,13 @@ void Scanner::printIndex(string outputFile, bool canAppend, int frmt) {
 			outIndex << endl;
 		}
 	} else if(frmt == FRMT_ONE){
-      for (unsigned int j = 0; j < regionList->size(); j++) {
-         outIndex << header.substr(1) << "\t";
-         outIndex << ((int) (regionList->at(j)->getStart() +1)) << "\t";
-         outIndex << ((int) (regionList->at(j)->getEnd() + 1));
-         outIndex << endl;
-      }
-   }
+		for (unsigned int j = 0; j < regionList->size(); j++) {
+			outIndex << header.substr(1) << "\t";
+			outIndex << ((int) (regionList->at(j)->getStart() +1)) << "\t";
+			outIndex << ((int) (regionList->at(j)->getEnd() + 1));
+			outIndex << endl;
+		}
+	}
 
 	outIndex.close();
 }

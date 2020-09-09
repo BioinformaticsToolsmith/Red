@@ -358,11 +358,11 @@ int main(int argc, char * argv[]) {
 	message.append(
 			"\t-frm the format of the output: 1 (chrName:start-end), \n");
 	message.append(
-         "\t     2 (chrName\tstart\tend) or 3 (chrName\tstart\tend).\n");
+   		"\t     2 (chrName\tstart\tend) or 3 (chrName\tstart\tend).\n");
 	message.append(
 			"\t\tOutput formats 1 & 2 are zero-based, end exclusive.\n");
 	message.append(
-         "\t\tOutput format 3 is one-based, end inclusive (Ensembl).\n");
+   		"\t\tOutput format 3 is one-based, end inclusive (Ensembl).\n");
 	message.append("\t-hmo file where the HMM is saved, optional.\n");
 	message.append("\t-cor integer of the number of threads, optional.\n");
 	message.append("\t\tThe more threads, the higher the memory requirement.\n");
