@@ -231,7 +231,7 @@ void drive(map<string, string> * const param) {
 					if (atoi(param->at(FRM_PRM).c_str()) == 2) {
 						ext = string(".bed");
 					} else if (atoi(param->at(FRM_PRM).c_str()) == 3) {
-                  ext = string(".tsv")
+                  ext = string(".tsv");
 					}
 					string rptFile = param->at(RPT_PRM) + Util::fileSeparator
 							+ nickName + ext;
